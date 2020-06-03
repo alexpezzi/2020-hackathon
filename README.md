@@ -3,6 +3,8 @@
 ## Idea
 ### Done:
 - Fetch random joke and translate using a popular character (ie. yoda).
+  - https://sv443.net/jokeapi/v2
+  - https://api.funtranslations.com
 ### TODO
 - Text-to-speech
 
