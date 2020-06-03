@@ -1,3 +1,15 @@
 # 2020-hackathon
 
-Build and run to view a translated joke
+## Idea
+### Done:
+- Fetch random joke and translate using a popular character (ie. yoda).
+### TODO
+- Text-to-speech
+
+## How to
+1. Configure character in https://github.com/alexpezzi/2020-hackathon/blob/master/Hackathon/SceneDelegate.swift
+2. Build and run to view output.
+
+## Issues:
+- Limited time, so configuartion must be done manually in `SceneDelegate.swift`.
+- API limit on `https://api.funtranslations.com` (5 per hour).  If you see `The data couldn't be read because it is missing`, then you need wait an hour (or use a vpn).
