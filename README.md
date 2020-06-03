@@ -1,6 +1,6 @@
 # 2020-hackathon
 
-## Members:
+## Members
 - Alex Pezzi
 - Norbert Curiciac
 
@@ -9,7 +9,7 @@
 - Fetch random joke and translate using a popular character (ie. yoda).
   - https://sv443.net/jokeapi/v2
   - https://api.funtranslations.com
-### TODO
+### TODO:
 - Text-to-speech
 
 ## How to
