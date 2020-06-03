@@ -15,16 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-		// Create the SwiftUI view that provides the window contents.
 		
-		let provider = JokeAPIProvider(categories: [.progamming, .dark, .miscellaneous],
-									   blacklist: [],
-									   jokeTypes: [])
-		let viewModel = JokeViewModel(provider: provider)
+		let jokeProvider = JokeAPIProvider(categories: [.progamming, .dark, .miscellaneous])
+		let translationProvider = FunTranslationsProvider(key: "yoda")
+		
+		let viewModel = JokeViewModel(
+			jokesProvider: jokeProvider,
+			translationsProvider: translationProvider)
 		
 		let contentView = JokeView(viewModel: viewModel)
 

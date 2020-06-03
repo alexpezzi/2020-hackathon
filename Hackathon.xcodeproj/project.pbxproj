@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84778613248819F90048BA60 /* TanslationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84778612248819F90048BA60 /* TanslationProvider.swift */; };
+		8477861624881A2D0048BA60 /* FunTranslationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477861524881A2D0048BA60 /* FunTranslationsProvider.swift */; };
 		84B643942487FFB9006FA01E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B643932487FFB9006FA01E /* AppDelegate.swift */; };
 		84B643962487FFB9006FA01E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B643952487FFB9006FA01E /* SceneDelegate.swift */; };
 		84B643982487FFB9006FA01E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B643972487FFB9006FA01E /* ContentView.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84778612248819F90048BA60 /* TanslationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TanslationProvider.swift; sourceTree = "<group>"; };
+		8477861524881A2D0048BA60 /* FunTranslationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunTranslationsProvider.swift; sourceTree = "<group>"; };
 		84B643902487FFB9006FA01E /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B643932487FFB9006FA01E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B643952487FFB9006FA01E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84778611248819CA0048BA60 /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				8477861424881A200048BA60 /* FunTranslations */,
+				84778612248819F90048BA60 /* TanslationProvider.swift */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		8477861424881A200048BA60 /* FunTranslations */ = {
+			isa = PBXGroup;
+			children = (
+				8477861524881A2D0048BA60 /* FunTranslationsProvider.swift */,
+			);
+			path = FunTranslations;
+			sourceTree = "<group>";
+		};
 		84B643872487FFB8006FA01E = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +144,7 @@
 		84B643B52488011C006FA01E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				84778611248819CA0048BA60 /* Translate */,
 				84B643B62488012C006FA01E /* Jokes */,
 			);
 			path = Service;
@@ -263,8 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8477861624881A2D0048BA60 /* FunTranslationsProvider.swift in Sources */,
 				84B643942487FFB9006FA01E /* AppDelegate.swift in Sources */,
 				84BCFD1124881343003C8239 /* JokeView.swift in Sources */,
+				84778613248819F90048BA60 /* TanslationProvider.swift in Sources */,
 				84B643B824880162006FA01E /* JokesProvider.swift in Sources */,
 				84BCFD132488134F003C8239 /* JokeViewModel.swift in Sources */,
 				84BCFD1524881677003C8239 /* ActivityIndicator.swift in Sources */,

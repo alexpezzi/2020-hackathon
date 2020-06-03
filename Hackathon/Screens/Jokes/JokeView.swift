@@ -14,7 +14,18 @@ struct JokeView: View {
 	
     var body: some View {
 		ZStack {
-			makeView()
+			
+			
+			VStack {
+				Button(action: {
+					self.viewModel.fetch()
+				}) {
+					Text("New")
+				}
+				
+				makeView().padding()
+			}
+			
 		}
 		.onAppear {
 			self.viewModel.fetch()
@@ -26,8 +37,14 @@ struct JokeView: View {
 		switch viewModel.state {
 		case .loading:
 			return AnyView(ActivityIndicator())
-		case .result(let joke):
-			return AnyView(Text(joke))
+		case .result(let output):
+			
+			let view = VStack(spacing: 20) {
+				Text(output.joke).font(.headline)
+				Text(output.translation)
+			}
+			
+			return AnyView(view)
 		case .failed(let error):
 			return AnyView(Text(error.localizedDescription))
 		}

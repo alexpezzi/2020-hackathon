@@ -49,7 +49,7 @@ final class JokeAPIProvider {
 	private let jokeTypes: [JokeType]
 	private let session: URLSession = .shared
 	
-	init(categories: [Category], blacklist: [Flags], jokeTypes: [JokeType]) {
+	init(categories: [Category], blacklist: [Flags] = [], jokeTypes: [JokeType] = []) {
 		self.categories = categories
 		self.blacklist = blacklist
 		self.jokeTypes = jokeTypes

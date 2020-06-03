@@ -15,21 +15,29 @@ enum State<T> {
 	case failed(Error)
 }
 
+struct Output {
+	let joke: String
+	let translation: String
+}
+
 final class JokeViewModel: ObservableObject {
 	
-	@Published var state: State<String> = .loading
+	@Published var state: State<Output> = .loading
 	
-	private let provider: JokesProvider
+	private let jokesProvider: JokesProvider
+	private let translationsProvider: TranslationProvider
 	private var disposeBag: Set<AnyCancellable> = .init()
 	
-	init(provider: JokesProvider) {
-		self.provider = provider
+	init(jokesProvider: JokesProvider, translationsProvider: TranslationProvider) {
+		self.jokesProvider = jokesProvider
+		self.translationsProvider = translationsProvider
 	}
 	
 	func fetch() {
 		state = .loading
 		disposeBag = .init()
-		provider
+		
+		jokesProvider
 			.fetch()
 			.receive(on: RunLoop.main)
 			.sink(receiveCompletion: { completion in
@@ -39,8 +47,25 @@ final class JokeViewModel: ObservableObject {
 				default:
 					return
 				}
+			}) { [weak self] value in
+				self?.fetchTranslation(message: value)
+			}
+			.store(in: &disposeBag)
+	}
+	
+	private func fetchTranslation(message: String) {
+		translationsProvider
+			.fetch(message: message)
+			.receive(on: RunLoop.main)
+			.sink(receiveCompletion: { completion in
+				switch completion {
+				case .failure(let error):
+					self.state = .failed(error)
+				default:
+					return
+				}
 			}) { value in
-				self.state = .result(value)
+				self.state = .result(Output(joke: message, translation: value))
 			}
 			.store(in: &disposeBag)
 	}
