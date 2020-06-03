@@ -15,7 +15,6 @@ struct JokeView: View {
     var body: some View {
 		ZStack {
 			
-			
 			VStack {
 				Button(action: {
 					self.viewModel.fetch()

@@ -16,8 +16,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		
-		let jokeProvider = JokeAPIProvider(categories: [.progamming, .dark, .miscellaneous])
-		let translationProvider = FunTranslationsProvider(key: "yoda")
+		/**
+		Keys:
+		1. yoda
+		2. gungan
+		3. mandalorian
+		4. shakespeare
+		5. orcish
+		6. pirate
+		*/
+		let translationProvider: TranslationProvider = FunTranslationsProvider(key: "yoda")
+		let jokeProvider: JokesProvider = JokeAPIProvider(categories: [.progamming, .dark, .miscellaneous])
 		
 		let viewModel = JokeViewModel(
 			jokesProvider: jokeProvider,
