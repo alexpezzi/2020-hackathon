@@ -1,5 +1,9 @@
 # 2020-hackathon
 
+## Members:
+- Alex Pezzi
+- Norbert Curiciac
+
 ## Idea
 ### Done:
 - Fetch random joke and translate using a popular character (ie. yoda).
